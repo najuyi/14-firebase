@@ -1,7 +1,7 @@
 <!-- Element for shared note-pad space -->
 <div class="tweet-box chirppad">
   <p>ChirpPad</p>
-  <textarea name="chirppad" class="form-control"></textarea>
+  <textarea name="chirppad" class="form-control" ng-model="chirppad.text"></textarea>
 </div>
 
 <!-- Element for writing tweets -->
@@ -13,7 +13,7 @@
     <!-- Form for writing tweets -->
     <form name="chirpForm" id="tweet-input" role="form">
 
-      <textarea placeholder="What's Happening..." name="text" class="form-control" required ng-maxlength="140"></textarea>
+      <textarea placeholder="What's Happening..." name="text" class="form-control" required ng-maxlength="140" ng-model="newChirp.text"></textarea>
       <p class="help-block" ng-show="chirpForm.text.$error.maxlength">140 character limit!</p>
       
       <!-- Tweet button -->

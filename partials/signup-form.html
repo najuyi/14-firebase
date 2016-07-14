@@ -4,7 +4,7 @@
 	<!-- Bind model "handle" to this input -->
 	<div class="form-group">
 		<label for="handle">Handle:</label>
-		<input id="handle" name="handle" class="form-control" ng-minlength="3" required>
+		<input id="handle" name="handle" class="form-control" ng-minlength="3" ng-model="newUser.handle" required>
 		<!-- Show error messages if the length is too short -->	
 		<p class="help-block" ng-if="signupForm.handle.$touched && signupForm.handle.$error.required">Required!</p>
 		<p class="help-block" ng-if="signupForm.handle.$error.minlength">Too short!</p>
@@ -15,13 +15,13 @@
 	<div class="form-group">
 		<label for="avatar">Avatar Image URL:</label>
 		<img class="avatar" ng-src="{{newUser.avatar}}">
-		<input id="avatar" name="avatar" class="form-control" placeholder="http://www.example.com/my-picture.jpg">
+		<input id="avatar" name="avatar" class="form-control" placeholder="http://www.example.com/my-picture.jpg" ng-model="newUser.avatar">
 	</div>
 
 	<!-- Bind model "email" to this input -->
 	<div class="form-group">
 		<label for="email">Email:</label>
-		<input type="email" id="email" name="email" class="form-control" required></input>
+		<input type="email" id="email" name="email" class="form-control" ng-model="newUser.email" required></input>
 		<!-- Show error messages if the email is not valid -->	
 		<p class="help-block" ng-if="signupForm.email.$touched && signupForm.email.$error.required">Required!</p>
 		<p class="help-block" ng-if="signupForm.email.$error.email">Not an email!</p>
@@ -30,7 +30,7 @@
 	<!-- Bind model "password" to this input -->
 	<div class="form-group">
 		<label for="pw">Password:</label>
-		<input id="pw" name="password" type="password" class="form-control" ng-minlength="6" required></input>
+		<input id="pw" name="password" type="password" class="form-control" ng-minlength="6" ng-model="newUser.password" required></input>
 		<!-- Show error messages if the password is invalid -->	
 		<p class="help-block" ng-if="signupForm.password.$touched && signupForm.password.$error.required">Required!</p>
 		<p class="help-block" ng-if="signupForm.handle.$error.minlength">Must be at least 6 characters.</p>
