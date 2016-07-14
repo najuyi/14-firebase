@@ -19,21 +19,8 @@ app.controller('ChirperCtrl', ['$scope', '$firebaseAuth', '$firebaseObject', '$f
 	//your code goes here
 	
 	$scope.like = function(tweet) {
-		if (tweet.liked == undefined) {
-			tweet.liked = [];
-			tweet.liked.push($scope.userId); 
-			tweet.likes++;
-			$scope.chirps.$save(tweet);
-		}
-		else {
-			for (var i = 0; i < tweet.liked.length; i++) {
-				if (tweet.liked[i] != $scope.userId) {
-					tweet.liked.push($scope.userId); 
-					tweet.likes++;
-					$scope.chirps.$save(tweet);
-				}
-			}
-		}
+		tweet.likes++;
+		$scope.chirps.$save(tweet);
 	};
 
 	$scope.postChirp = function() {
